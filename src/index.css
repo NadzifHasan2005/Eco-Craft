@@ -1502,6 +1502,114 @@
   margin: 0 0 1rem;
 }
 
+.article-body ul,
+.article-body ol {
+  margin: 0 0 1.25rem;
+  padding-left: 1.75rem;
+}
+
+.article-body li {
+  margin: 0.35rem 0;
+  padding-left: 0.2rem;
+}
+
+.article-body blockquote {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #52B788;
+  background: rgba(82, 183, 136, 0.1);
+  color: #526358;
+}
+
+.article-body pre {
+  overflow-x: auto;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #e9eee8;
+}
+
+.article-body code {
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+  background: #e9eee8;
+  font-family: monospace;
+}
+
+.article-body pre code {
+  padding: 0;
+  background: transparent;
+}
+
+.article-body a {
+  color: #2D6A4F;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.article-body hr {
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid #cad7cc;
+}
+
+.article-editor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1.25rem;
+}
+
+.article-editor-field textarea {
+  min-height: 320px;
+  resize: vertical;
+  font-family: monospace;
+  line-height: 1.6;
+}
+
+.article-markdown-help {
+  margin-top: 0.65rem;
+  color: #64746a;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.article-markdown-help code {
+  color: #1B4332;
+  font-family: monospace;
+}
+
+.article-preview-panel {
+  min-height: 320px;
+  padding: 1rem 1.25rem;
+  border: 1px solid #dfe9e1;
+  border-radius: 12px;
+  background: #fbfcfa;
+}
+
+.article-preview-panel > h2 {
+  margin-bottom: 1rem;
+  color: #1B4332;
+  font-size: 1rem;
+}
+
+.article-preview-panel .article-body {
+  font-size: 0.9rem;
+}
+
+.article-preview-panel .article-body h2 {
+  font-size: 1.25rem;
+}
+
+.article-preview-panel .article-body h3 {
+  font-size: 1.1rem;
+}
+
+.article-preview-empty {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
 .article-contact-cta {
   margin-top: 2rem;
 }
@@ -1716,6 +1824,10 @@
 }
 
 @media (max-width: 800px) {
+  .article-editor-grid {
+    grid-template-columns: 1fr;
+  }
+
   .home-intro,
   .contact-content {
     grid-template-columns: 1fr;

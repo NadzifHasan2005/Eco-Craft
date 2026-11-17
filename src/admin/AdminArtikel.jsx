@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowLeft, BookOpen, Pencil, Plus, Trash2 } from 'lucide-react';
+import ArticleContent from '../ArticleContent.jsx';
 
 const emptyArticle = {
     judul: '',
@@ -107,9 +108,23 @@ export default function AdminArtikel({ articles, setArticles }) {
                             <label htmlFor="article-summary">Ringkasan artikel</label>
                             <textarea id="article-summary" rows="3" value={form.ringkasan} onChange={(event) => updateField('ringkasan', event.target.value)} required />
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="article-content">Isi artikel</label>
-                            <textarea id="article-content" rows="10" value={form.konten} onChange={(event) => updateField('konten', event.target.value)} required />
+                        <div className="article-editor-grid">
+                            <div className="form-group article-editor-field">
+                                <label htmlFor="article-content">Isi artikel (Markdown)</label>
+                                <textarea id="article-content" rows="12" value={form.konten} onChange={(event) => updateField('konten', event.target.value)} required />
+                                <p className="article-markdown-help">
+                                    Gunakan <code># Subjudul</code>, <code>**tebal**</code>, <code>*miring*</code>, <code>- item</code>,
+                                    {' '}<code>1. item</code>, <code>&gt; kutipan</code>, atau <code>[tautan](https://...)</code>.
+                                </p>
+                            </div>
+                            <aside className="article-preview-panel" aria-live="polite">
+                                <h2>Pratinjau langsung</h2>
+                                {form.konten.trim() ? (
+                                    <ArticleContent content={form.konten} />
+                                ) : (
+                                    <p className="article-preview-empty">Hasil format artikel akan tampil di sini saat kamu mengetik.</p>
+                                )}
+                            </aside>
                         </div>
                         <div className="form-actions">
                             <button type="submit" className="btn-submit">{editingId ? 'Simpan Perubahan' : 'Simpan Artikel'}</button>
