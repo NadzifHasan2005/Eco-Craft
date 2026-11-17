@@ -1,0 +1,125 @@
+.login-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.login-brand {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-logo-box {
+  width: 60px;
+  height: 60px;
+  background: #d8f3dc;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+}
+
+.login-brand h2 {
+  color: #1b4332;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.login-brand p {
+  color: #555;
+  font-size: 0.875rem;
+}
+
+.login-error {
+  background: #ffeaee;
+  color: #d90429;
+  padding: 0.75rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  border: 1px solid #ffccd5;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1b4332;
+  margin-bottom: 0.5rem;
+}
+
+.input-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    color: #52b788;
+}
+
+.input-icon-wrapper input {
+    width: 100%;
+    padding: 0.75rem 2.8rem 0.75rem 2.8rem;
+    border: 2px solid #d8f3dc;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.input-icon-wrapper input:focus {
+    border-color: #52b788;
+}
+
+.toggle-pwd {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #777;
+    cursor: pointer;
+}
+
+.btn-login {
+    background: #1b4332;
+    color: #fff;
+    border: none;
+    padding: 0.85rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background 0.2s;
+}
+
+.btn-login:hover {
+    background: #2d6a4f;
+}
