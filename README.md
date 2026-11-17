@@ -54,11 +54,11 @@ npm install
 npm run dev
 ```
 
-Buka URL yang ditampilkan Vite di terminal, biasanya `http://localhost:5173`.
+Buka URL yang ditampilkan Vite di terminal, biasanya `http://localhost:5173/Eco-Craft/`.
 
 ### Panel admin demo
 
-Buka [`http://localhost:5173/admin`](http://localhost:5173/admin), lalu masuk dengan akun demo:
+Buka [`http://localhost:5173/Eco-Craft/admin`](http://localhost:5173/Eco-Craft/admin), lalu masuk dengan akun demo:
 
 | Email | Password |
 | --- | --- |
@@ -87,7 +87,12 @@ Buka [`http://localhost:5173/admin`](http://localhost:5173/admin), lalu masuk de
 
 ```text
 src/
-├── admin/       # Login dan dashboard admin
+├── admin/
+│   ├── AdminLogin.jsx      # Login admin
+│   ├── AdminPanel.jsx      # Layout dan navigasi panel admin
+│   ├── AdminDashboard.jsx  # Ringkasan dan statistik konten
+│   ├── AdminArtikel.jsx    # CRUD artikel
+│   └── AdminKatalog.jsx    # CRUD katalog tutorial DIY
 ├── assets/      # Logo dan gambar
 ├── data/        # Tutorial DIY bawaan
 ├── utils/       # Helper, termasuk validasi tautan YouTube

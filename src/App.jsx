@@ -8,7 +8,7 @@ import Artikel from './Artikel.jsx';
 import Kontak from './Kontak.jsx';
 import Tentang from './Tentang.jsx';
 import AdminLogin from './admin/AdminLogin.jsx';
-import AdminDashboard from './admin/AdminDashboard.jsx';
+import AdminPanel from './admin/AdminPanel.jsx';
 import { initialKreasiData } from './data/kreasiData.js';
 import { getYoutubeLinks } from './utils/youtube.js';
 import { ArrowLeft, Check, Clock, ExternalLink, Leaf, PlayCircle } from 'lucide-react';
@@ -117,7 +117,7 @@ function App() {
       {storageError && <p className="storage-warning" role="alert">{storageError}</p>}
       {isAdmin ? (
         isAdminAuthenticated ? (
-          <AdminDashboard
+          <AdminPanel
             tutorials={tutorials}
             setTutorials={updateTutorials}
             articles={articles}

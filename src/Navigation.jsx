@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, LayoutDashboard, Home, BookOpen, Info, Mail, Newspaper } from 'lucide-react';
 
-import ecoCraftLogo from './assets/ecocraft-logo.png';
+import ecoCraftLogo from './assets/ecoCraft-logo.png';
 
 export default function Navigation({ activeTab, setActiveTab, isAdmin, setIsAdmin }) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

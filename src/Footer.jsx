@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight, Leaf, Mail } from 'lucide-react';
-import ecoCraftLogo from './assets/ecocraft-logo.png';
+import ecoCraftLogo from './assets/ecoCraft-logo.png';
 
 const currentYear = new Date().getFullYear();
 
