@@ -1,102 +1,125 @@
-# EcoCraft
+<div align="center">
+  <img src="src/assets/ecoCraft-logo.png" alt="Logo EcoCraft" width="190" />
 
-EcoCraft adalah website inspirasi daur ulang yang membantu pengguna mengubah barang bekas menjadi kreasi DIY yang bermanfaat. Website menyediakan katalog tutorial, artikel lingkungan, informasi tentang EcoCraft, formulir kontak, serta panel admin untuk mengelola konten.
+  # EcoCraft
 
-## Fitur
+  **Ubah barang bekas menjadi kreasi berdaya guna.**
 
-- **Katalog DIY:** cari dan filter tutorial berdasarkan bahan, lihat daftar alat dan bahan serta langkah pembuatannya.
-- **Video tutorial:** pemutar dan tautan YouTube tersedia pada detail tutorial jika URL video valid.
-- **Artikel:** artikel yang dibuat melalui panel admin ditampilkan pada halaman Artikel dan dapat dicari serta dibaca.
-- **Tentang EcoCraft:** informasi, visi, dan misi EcoCraft.
-- **Kontak:** formulir menyiapkan email melalui aplikasi email pengguna. Website belum mengirim pesan melalui backend.
-- **Kalkulator dampak lingkungan:** perkiraan emisi karbon yang dicegah berdasarkan jumlah barang yang didaur ulang.
-- **Panel admin:** tambah, lihat, edit, dan hapus tutorial DIY maupun artikel.
+  Inspirasi DIY, cerita ramah lingkungan, dan langkah sederhana untuk bumi yang lebih lestari.
 
-## Teknologi
+  <br />
 
-- React
-- Vite
-- React Router
-- Lucide React
+  ![React](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)
+  ![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
+  ![License](https://img.shields.io/badge/Status-Proyek%20Demo-40916C)
+</div>
 
-## Persyaratan
+---
 
-- Node.js 20.19+ atau 22.12+
+## Tentang EcoCraft
+
+EcoCraft adalah website inspirasi daur ulang yang membantu siapa saja melihat potensi baru pada barang bekas. Temukan ide berdasarkan bahan, ikuti panduan pembuatan, dan mulai kebiasaan ramah lingkungan dari rumah.
+
+## Jelajahi fitur
+
+| Fitur | Yang bisa dilakukan |
+| --- | --- |
+| **Beranda** | Menjelajahi ide DIY unggulan dan menghitung estimasi dampak daur ulang. |
+| **Katalog DIY** | Mencari tutorial, memfilter berdasarkan bahan, melihat alat dan bahan, serta mengikuti langkah pembuatan. |
+| **Video panduan** | Menonton video YouTube pada detail tutorial saat tautan video tersedia. |
+| **Artikel** | Mencari dan membaca artikel yang dipublikasikan melalui panel admin. |
+| **Tentang EcoCraft** | Mengenal deskripsi, visi, dan misi EcoCraft. |
+| **Kontak** | Menyusun pesan melalui aplikasi email yang tersedia di perangkat. |
+| **Panel admin** | Menambah, melihat, mengedit, dan menghapus tutorial DIY serta artikel. |
+
+## Tampilan
+
+<div align="center">
+  <img src="src/assets/background-hero.png" alt="Latar visual EcoCraft" width="720" />
+</div>
+
+## Mulai menggunakan
+
+### Persyaratan
+
+- Node.js `20.19+` atau `22.12+`
 - npm
 
-## Menjalankan proyek
-
-Pasang dependensi:
+### Instalasi
 
 ```bash
+git clone https://github.com/NadzifHasan2005/Eco-Craft.git
+cd Eco-Craft
 npm install
-```
-
-Jalankan server pengembangan:
-
-```bash
 npm run dev
 ```
 
-Buka URL yang ditampilkan Vite, biasanya `http://localhost:5173`.
+Buka URL yang ditampilkan Vite di terminal, biasanya `http://localhost:5173`.
 
-Panel admin dapat dibuka langsung melalui:
+### Panel admin demo
 
-```text
-http://localhost:5173/admin
-```
+Buka [`http://localhost:5173/admin`](http://localhost:5173/admin), lalu masuk dengan akun demo:
 
-## Akun demo admin
-
-```text
-Email: admin@ecocraft.id
-Password: admin123
-```
-
-> **Peringatan:** akun demo dan validasi login saat ini tertanam di kode frontend. Ini tidak aman untuk penggunaan produksi. Ganti dengan autentikasi backend sebelum dipublikasikan.
-
-## Penyimpanan konten
-
-Tutorial dan artikel disimpan di `localStorage` browser dengan kunci `ecocraft-content-v1`. Data hanya tersedia pada browser dan perangkat tempat konten dibuat; data tidak tersinkron ke perangkat lain atau server. Artikel yang dihapus dari browser tidak dapat dipulihkan kecuali memiliki salinan.
-
-Saat browser belum memiliki data tersimpan, katalog dimulai dengan contoh tutorial dari `src/data/kreasiData.js`. Artikel baru dapat dibuat dari panel admin.
-
-## Perintah npm
-
-| Perintah | Kegunaan |
+| Email | Password |
 | --- | --- |
-| `npm run dev` | Menjalankan server pengembangan Vite |
-| `npm run build` | Membuat build produksi di folder `dist/` |
-| `npm run preview` | Menjalankan pratinjau build produksi |
-| `npm run lint` | Menjalankan Oxlint |
+| `admin@ecocraft.id` | `admin123` |
 
-## Build dan deployment
+> **Penting:** autentikasi demo saat ini berjalan di frontend dan bukan perlindungan yang aman. Jangan gunakan kredensial ini untuk data sensitif atau produksi. Gunakan autentikasi backend sebelum menerbitkan website.
 
-Buat build produksi:
+## Perintah yang tersedia
 
-```bash
-npm run build
-```
+| Perintah | Keterangan |
+| --- | --- |
+| `npm run dev` | Menjalankan server pengembangan Vite. |
+| `npm run build` | Membuat build produksi ke `dist/`. |
+| `npm run preview` | Meninjau build produksi secara lokal. |
+| `npm run lint` | Menjalankan pemeriksaan Oxlint. |
 
-Untuk melihat hasil build secara lokal:
+## Konten dan penyimpanan
 
-```bash
-npm run preview
-```
+- Tutorial bawaan dimuat dari `src/data/kreasiData.js`.
+- Perubahan tutorial dan artikel admin disimpan di `localStorage` browser dengan kunci `ecocraft-content-v1`.
+- Data tersimpan hanya di browser dan perangkat saat ini; belum ada sinkronisasi server atau antarperangkat.
+- Penghapusan konten bersifat permanen pada browser tersebut kecuali ada cadangan.
+- Form kontak menyiapkan tautan `mailto`; pengiriman pesan dilakukan melalui aplikasi email pengguna, bukan oleh server EcoCraft.
 
-Karena aplikasi menggunakan React Router, konfigurasi hosting produksi perlu mengarahkan permintaan halaman seperti `/admin` ke `index.html` agar URL tersebut tetap dapat dibuka langsung atau dimuat ulang.
-
-## Struktur utama
+## Struktur proyek
 
 ```text
 src/
-  admin/       Halaman login dan dashboard admin
-  assets/      Logo dan gambar
-  data/        Data tutorial awal
-  App.jsx      State aplikasi dan navigasi halaman
-  Artikel.jsx  Halaman artikel
-  Home.jsx     Beranda dan kalkulator dampak
-  Katalog.jsx  Katalog tutorial DIY
-  Kontak.jsx   Formulir kontak
-  Tentang.jsx  Profil, visi, dan misi EcoCraft
+├── admin/       # Login dan dashboard admin
+├── assets/      # Logo dan gambar
+├── data/        # Tutorial DIY bawaan
+├── utils/       # Helper, termasuk validasi tautan YouTube
+├── App.jsx      # State aplikasi dan pemilihan halaman
+├── Artikel.jsx  # Daftar dan detail artikel
+├── Home.jsx     # Beranda dan kalkulator dampak
+├── Katalog.jsx  # Katalog tutorial DIY
+├── Kontak.jsx   # Formulir kontak
+└── Tentang.jsx  # Deskripsi, visi, dan misi EcoCraft
 ```
+
+## Build dan deployment
+
+Buat dan tinjau build lokal:
+
+```bash
+npm run build
+npm run preview
+```
+
+### GitHub Pages
+
+Proyek ini dikonfigurasi untuk GitHub Pages pada repositori `Eco-Craft`:
+
+**https://nadzifhasan2005.github.io/Eco-Craft/**
+
+Setiap push ke branch `main` akan menjalankan workflow GitHub Actions untuk memasang dependensi, memeriksa lint, membuat build, dan menerbitkan folder `dist/`. Workflow juga membuat fallback `404.html` agar halaman React seperti `/admin` tetap dapat dimuat ulang di GitHub Pages.
+
+Jika Pages belum aktif pada repositori, buka **Settings → Pages**, lalu pilih **GitHub Actions** sebagai sumber deployment. Status build dan deployment dapat dilihat pada tab **Actions** di GitHub.
+
+---
+
+<div align="center">
+  Dibuat dengan semangat daur ulang 🌱
+</div>
