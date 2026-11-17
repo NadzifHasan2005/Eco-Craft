@@ -1,6 +1,47 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, BookOpen, Clock, Search } from 'lucide-react';
 
+function ArticleBody({ content = '' }) {
+    const blocks = [];
+    let paragraphLines = [];
+
+    const addParagraph = () => {
+        if (paragraphLines.length > 0) {
+            blocks.push({ type: 'paragraph', text: paragraphLines.join(' ') });
+            paragraphLines = [];
+        }
+    };
+
+    content.split(/\r?\n/).forEach((line) => {
+        const heading = line.trim().match(/^(#{1,6})\s+(.+)$/);
+        if (heading) {
+            addParagraph();
+            blocks.push({
+                type: 'heading',
+                level: Math.min(heading[1].length + 1, 6),
+                text: heading[2]
+            });
+        } else if (line.trim()) {
+            paragraphLines.push(line.trim());
+        } else {
+            addParagraph();
+        }
+    });
+    addParagraph();
+
+    return (
+        <div className="article-body">
+            {blocks.map((block, index) => {
+                if (block.type === 'heading') {
+                    const Heading = `h${block.level}`;
+                    return <Heading key={index}>{block.text}</Heading>;
+                }
+                return <p key={index}>{block.text}</p>;
+            })}
+        </div>
+    );
+}
+
 export default function Artikel({ articles = [], setActiveTab }) {
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedArticle, setSelectedArticle] = useState(null);
@@ -28,7 +69,7 @@ export default function Artikel({ articles = [], setActiveTab }) {
                         <h1>{selectedArticle.judul}</h1>
                         <p className="article-detail-summary">{selectedArticle.ringkasan}</p>
                         <p className="article-byline">Ditulis oleh {selectedArticle.penulis || 'Tim EcoCraft'}</p>
-                        <div className="article-body">{selectedArticle.konten}</div>
+                        <ArticleBody content={selectedArticle.konten} />
                         <button type="button" className="btn-primary article-contact-cta" onClick={() => setActiveTab('contact')}>
                             Diskusikan ide dengan kami <ArrowRight size={17} />
                         </button>

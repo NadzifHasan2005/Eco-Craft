@@ -1478,7 +1478,28 @@
   color: #3F4E45;
   font-size: 1rem;
   line-height: 1.9;
-  white-space: pre-line;
+}
+
+.article-body h2,
+.article-body h3,
+.article-body h4,
+.article-body h5,
+.article-body h6 {
+  margin: 1.5rem 0 0.75rem;
+  color: #1B4332;
+  line-height: 1.35;
+}
+
+.article-body h2 {
+  font-size: 1.5rem;
+}
+
+.article-body h3 {
+  font-size: 1.25rem;
+}
+
+.article-body p {
+  margin: 0 0 1rem;
 }
 
 .article-contact-cta {
