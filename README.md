@@ -30,7 +30,7 @@ EcoCraft adalah website inspirasi daur ulang yang membantu siapa saja melihat po
 | **Artikel** | Mencari dan membaca artikel yang dipublikasikan melalui panel admin. |
 | **Tentang EcoCraft** | Mengenal deskripsi, visi, dan misi EcoCraft. |
 | **Kontak** | Menyusun pesan melalui aplikasi email yang tersedia di perangkat. |
-| **Panel admin** | Menambah, melihat, mengedit, dan menghapus tutorial DIY serta artikel. |
+| **Panel admin** | Menambah, melihat, mengedit, dan menghapus tutorial DIY serta artikel, termasuk mengunggah gambar dari perangkat. |
 
 ## Tampilan
 
@@ -79,6 +79,7 @@ Buka [`http://localhost:5173/Eco-Craft/admin`](http://localhost:5173/Eco-Craft/a
 
 - Tutorial bawaan dimuat dari `src/data/kreasiData.js`.
 - Perubahan tutorial dan artikel admin disimpan di `localStorage` browser dengan kunci `ecocraft-content-v1`.
+- Gambar yang diunggah dikompres dan disimpan bersama konten di browser. Gunakan gambar JPEG, PNG, atau WebP hingga 15 MB; data tidak tersinkron ke perangkat lain.
 - Data tersimpan hanya di browser dan perangkat saat ini; belum ada sinkronisasi server atau antarperangkat.
 - Penghapusan konten bersifat permanen pada browser tersebut kecuali ada cadangan.
 - Form kontak menyiapkan tautan `mailto`; pengiriman pesan dilakukan melalui aplikasi email pengguna, bukan oleh server EcoCraft.

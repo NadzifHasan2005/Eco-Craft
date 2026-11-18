@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft, BookOpen, Pencil, Plus, Trash2 } from 'lucide-react';
 import ArticleContent from '../ArticleContent.jsx';
+import ImageUploadField from './ImageUploadField.jsx';
 
 const emptyArticle = {
     judul: '',
@@ -95,10 +96,13 @@ export default function AdminArtikel({ articles, setArticles }) {
                             </div>
                         </div>
                         <div className="form-row">
-                            <div className="form-group">
-                                <label htmlFor="article-image">URL gambar utama</label>
-                                <input id="article-image" type="url" value={form.gambar} onChange={(event) => updateField('gambar', event.target.value)} required />
-                            </div>
+                            <ImageUploadField
+                                id="article-image"
+                                label="Gambar utama artikel"
+                                value={form.gambar}
+                                onChange={(value) => updateField('gambar', value)}
+                                required
+                            />
                             <div className="form-group">
                                 <label htmlFor="article-read-time">Waktu baca</label>
                                 <input id="article-read-time" value={form.waktuBaca} onChange={(event) => updateField('waktuBaca', event.target.value)} required />

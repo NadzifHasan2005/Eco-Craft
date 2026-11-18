@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Pencil, Plus, Scissors, Trash2 } from 'lucide-react';
+import ImageUploadField from './ImageUploadField.jsx';
 
 const categories = ['Plastik', 'Kardus & Kertas', 'Tekstil', 'Kayu / Paralon'];
 
@@ -148,10 +149,13 @@ export default function AdminKatalog({ tutorials, setTutorials }) {
                             <textarea id="tutorial-description" rows="3" value={form.deskripsi} onChange={(event) => updateField('deskripsi', event.target.value)} required />
                         </div>
                         <div className="form-row">
-                            <div className="form-group">
-                                <label htmlFor="tutorial-image">URL gambar thumbnail</label>
-                                <input id="tutorial-image" type="url" value={form.thumbnail} onChange={(event) => updateField('thumbnail', event.target.value)} required />
-                            </div>
+                            <ImageUploadField
+                                id="tutorial-image"
+                                label="Thumbnail tutorial DIY"
+                                value={form.thumbnail}
+                                onChange={(value) => updateField('thumbnail', value)}
+                                required
+                            />
                             <div className="form-group">
                                 <label htmlFor="tutorial-video">URL video YouTube (opsional)</label>
                                 <input id="tutorial-video" type="url" value={form.videoUrl} onChange={(event) => updateField('videoUrl', event.target.value)} />
